@@ -1,21 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:trabalho2/tabController.dart';
+import 'package:trabalho2/tab_controller.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: HomeScreen(),
     );
   }
 }
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _HomeScreenState createState() => _HomeScreenState();
 }
 
@@ -87,7 +92,7 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
-      body: ThemePreviewScreen(),
+      body: const ThemePreviewScreen(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         items: const <BottomNavigationBarItem>[

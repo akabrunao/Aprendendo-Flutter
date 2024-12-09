@@ -100,6 +100,33 @@ class ThemePreviewScreen extends StatelessWidget {
               OutlinedButton.icon(onPressed: null, icon: const Icon(Icons.thumb_up), label: const Text('Disabled')),
             ],
           ),
+          const SizedBox(height: 20),
+          Row(
+            children: [
+              TextButton(onPressed: () {}, child: const Text('Text button')),
+              const SizedBox(width: 10),
+              const TextButton(onPressed: null, child: Text('Disabled')),
+            ],
+          ),
+          const SizedBox(height: 20),
+          Row(
+            children: [
+              TextButton.icon(onPressed: () {}, icon: const Icon(Icons.thumb_up), label: const Text('Text button icon')),
+              const SizedBox(width: 10),
+              TextButton.icon(onPressed: null, icon: const Icon(Icons.thumb_up), label: const Text('Disabled')),
+            ],
+          ),
+          const Divider(),
+          Row(
+            children: [
+              const Expanded(child: Text("Icon buttons")),
+              const Text("Enabled"),
+              IconButton(onPressed: () {}, icon: const Icon(Icons.thumb_up)),
+              const SizedBox(width: 10),
+              const Text("Disabled"),
+              const IconButton(onPressed: null, icon: Icon(Icons.thumb_down)),
+            ],
+          )
         ],
       ),
     );
