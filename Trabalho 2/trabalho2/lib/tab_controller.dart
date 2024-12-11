@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:trabalho2/data_fetcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +22,7 @@ class ThemePreviewScreen extends StatefulWidget {
   const ThemePreviewScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _ThemePreviewScreenState createState() => _ThemePreviewScreenState();
 }
 
@@ -31,7 +33,7 @@ class _ThemePreviewScreenState extends State<ThemePreviewScreen> {
   double _sliderValue1 = 0.2;
   double _sliderValue2 = 20;
   final double _sliderValue3 = 0.2;
-  DateTime? _selectedDate = DateTime.now();
+  bool isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -71,107 +73,130 @@ class _ThemePreviewScreenState extends State<ThemePreviewScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 20),
-            Row(
-              children: [
-                ElevatedButton(
-                    onPressed: () {}, child: const Text('Elevated button')),
-                const SizedBox(width: 10),
-                const ElevatedButton(onPressed: null, child: Text('Disabled')),
-              ],
+            IntrinsicWidth(
+              child: Row(
+                children: [
+                  ElevatedButton(
+                      onPressed: () {}, child: const Text('Elevated button')),
+                  const SizedBox(width: 10),
+                  const ElevatedButton(
+                      onPressed: null, child: Text('Disabled')),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
-            Row(
-              children: [
-                ElevatedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.thumb_up),
-                    label: const Text('Elevated button icon')),
-                const SizedBox(width: 10),
-                ElevatedButton.icon(
-                    onPressed: null,
-                    icon: const Icon(Icons.thumb_up),
-                    label: const Text('Disabled')),
-              ],
+            IntrinsicWidth(
+              child: Row(
+                children: [
+                  ElevatedButton.icon(
+                      onPressed: () {},
+                      icon: const Icon(Icons.thumb_up),
+                      label: const Text('Elevated button icon')),
+                  const SizedBox(width: 10),
+                  ElevatedButton.icon(
+                      onPressed: null,
+                      icon: const Icon(Icons.thumb_up),
+                      label: const Text('Disabled')),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
-            Row(
-              children: [
-                FilledButton(
-                    onPressed: () {}, child: const Text('Filled button')),
-                const SizedBox(width: 10),
-                const FilledButton(onPressed: null, child: Text('Disabled')),
-              ],
+            IntrinsicWidth(
+              child: Row(
+                children: [
+                  FilledButton(
+                      onPressed: () {}, child: const Text('Filled button')),
+                  const SizedBox(width: 10),
+                  const FilledButton(onPressed: null, child: Text('Disabled')),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
-            Row(
-              children: [
-                FilledButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.thumb_up),
-                    label: const Text('Filled button icon')),
-                const SizedBox(width: 10),
-                FilledButton.icon(
-                    onPressed: null,
-                    icon: const Icon(Icons.thumb_up),
-                    label: const Text('Disabled')),
-              ],
+            IntrinsicWidth(
+              child: Row(
+                children: [
+                  FilledButton.icon(
+                      onPressed: () {},
+                      icon: const Icon(Icons.thumb_up),
+                      label: const Text('Filled button icon')),
+                  const SizedBox(width: 10),
+                  FilledButton.icon(
+                      onPressed: null,
+                      icon: const Icon(Icons.thumb_up),
+                      label: const Text('Disabled')),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
-            Row(
-              children: [
-                OutlinedButton(
-                    onPressed: () {}, child: const Text('Outlined button')),
-                const SizedBox(width: 10),
-                const OutlinedButton(onPressed: null, child: Text('Disabled')),
-              ],
+            IntrinsicWidth(
+              child: Row(
+                children: [
+                  OutlinedButton(
+                      onPressed: () {}, child: const Text('Outlined button')),
+                  const SizedBox(width: 10),
+                  const OutlinedButton(
+                      onPressed: null, child: Text('Disabled')),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
-            Row(
-              children: [
-                OutlinedButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.thumb_up),
-                    label: const Text('Outlined button icon')),
-                const SizedBox(width: 10),
-                OutlinedButton.icon(
-                    onPressed: null,
-                    icon: const Icon(Icons.thumb_up),
-                    label: const Text('Disabled')),
-              ],
+            IntrinsicWidth(
+              child: Row(
+                children: [
+                  OutlinedButton.icon(
+                      onPressed: () {},
+                      icon: const Icon(Icons.thumb_up),
+                      label: const Text('Outlined button icon')),
+                  const SizedBox(width: 10),
+                  OutlinedButton.icon(
+                      onPressed: null,
+                      icon: const Icon(Icons.thumb_up),
+                      label: const Text('Disabled')),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
-            Row(
-              children: [
-                TextButton(onPressed: () {}, child: const Text('Text button')),
-                const SizedBox(width: 10),
-                const TextButton(onPressed: null, child: Text('Disabled')),
-              ],
+            IntrinsicWidth(
+              child: Row(
+                children: [
+                  TextButton(
+                      onPressed: () {}, child: const Text('Text button')),
+                  const SizedBox(width: 10),
+                  const TextButton(onPressed: null, child: Text('Disabled')),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
-            Row(
-              children: [
-                TextButton.icon(
-                    onPressed: () {},
-                    icon: const Icon(Icons.thumb_up),
-                    label: const Text('Text button icon')),
-                const SizedBox(width: 10),
-                TextButton.icon(
-                    onPressed: null,
-                    icon: const Icon(Icons.thumb_up),
-                    label: const Text('Disabled')),
-              ],
+            IntrinsicWidth(
+              child: Row(
+                children: [
+                  TextButton.icon(
+                      onPressed: () {},
+                      icon: const Icon(Icons.thumb_up),
+                      label: const Text('Text button icon')),
+                  const SizedBox(width: 10),
+                  TextButton.icon(
+                      onPressed: null,
+                      icon: const Icon(Icons.thumb_up),
+                      label: const Text('Disabled')),
+                ],
+              ),
             ),
             const Divider(),
-            Row(
-              children: [
-                const Expanded(child: Text("Icon buttons")),
-                const Text("Enabled"),
-                IconButton(onPressed: () {}, icon: const Icon(Icons.thumb_up)),
-                const SizedBox(width: 10),
-                const Text("Disabled"),
-                const IconButton(onPressed: null, icon: Icon(Icons.thumb_down)),
-              ],
-            )
+            IntrinsicWidth(
+              child: Row(
+                children: [
+                  const Expanded(child: Text("Icon buttons")),
+                  const Text("Enabled"),
+                  IconButton(
+                      onPressed: () {}, icon: const Icon(Icons.thumb_up)),
+                  const SizedBox(width: 10),
+                  const Text("Disabled"),
+                  const IconButton(
+                      onPressed: null, icon: Icon(Icons.thumb_down)),
+                ],
+              ),
+            ),
           ],
         ),
       ),
@@ -179,6 +204,10 @@ class _ThemePreviewScreenState extends State<ThemePreviewScreen> {
   }
 
   Widget _buildInputsTab() {
+    // Lista de opções para o Dropdown
+    final List<String> dropdownOptions = ['Option 1', 'Option 2', 'Option 3'];
+    String? selectedOption; // Variável para armazenar a opção selecionada
+
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -219,7 +248,23 @@ class _ThemePreviewScreenState extends State<ThemePreviewScreen> {
                 errorText: 'Error',
               ),
             ),
-            // Adicione mais campos conforme necessário
+            const SizedBox(height: 20),
+            // DropdownButton
+            DropdownButton<String>(
+              hint: const Text('Select an option'),
+              value: selectedOption,
+              onChanged: (String? newValue) {
+                selectedOption = newValue;
+                // Chama setState ou um método para atualizar o estado se for um StatefulWidget
+              },
+              items: dropdownOptions.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+
           ],
         ),
       ),
@@ -368,6 +413,23 @@ class _ThemePreviewScreenState extends State<ThemePreviewScreen> {
                 ),
               ],
             ),
+            const Divider(),
+            Row(
+              children: [
+                FilterChip(
+                  label: const Text("FilterChip"),
+                  selected: isSelected,
+                  onSelected: (bool value) {
+                    setState(() {
+                      isSelected = !isSelected;
+                    });
+                  },
+                  avatar: const Text("F"),
+                ),
+                const SizedBox(width: 10),
+                Chip(label: const Text("Chip"), onDeleted: () {}),
+              ],
+            )
           ],
         ),
       ),
@@ -461,7 +523,7 @@ class _ThemePreviewScreenState extends State<ThemePreviewScreen> {
     );
   }
 
-	  Widget _buildWebTab() {
-			return Text('Web tab');
-	  }
+  Widget _buildWebTab() {
+    return const DataFetcher();
+  }
 }
